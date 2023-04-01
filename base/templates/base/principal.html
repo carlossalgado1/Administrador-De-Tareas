@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pendientes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #1c1c1c;
+        padding-top: 45px;
+        margin: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #333333;
+        box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+        padding: 30px;
+        line-height: 1.6;
+        color: #dcdcdc;
+      }
+      a {
+        color: #9b9b9b;
+        transition: all 0.3s ease;
+      }
+      a:hover {
+        color: #dcdcdc;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        color: #dcdcdc;
+      }
+      .barra-superior {
+        display: flex;
+        justify-content: space-between;
+        color: #dcdcdc;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: linear-gradient(90deg, #2c2c2c 0%, #1c1c1c 100%);
+      }
+
+      .envoltorio-tarea {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #3F3A3A;
+        border-top: 1px solid #e1e1e1;
+      }
+
+      .titulo-tarea {
+        display: flex;
+        align-items: center;
+      }
+
+      .titulo-tarea a {
+        text-decoration: none;
+        color: #938481;
+        margin-left: 10px;
+        font-size: 18px;
+      }
+
+      .icono-tarea-completa {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(105, 162, 105);
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+
+      .icono-tarea-incompleta {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(218, 218, 1218);
+        margin-right: 10px;
+      }
+
+      .enlace-eliminar {
+        text-decoration: none;
+        font-weight: 900;
+        color: #665957;
+        font-size: 22px;
+        line-height: 0;
+      }
+
+      #envoltorio-agregar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+      }
+
+      #enlace-agregar {
+          text-decoration: none;
+          color: #665957;
+          font-size: 42px;
+          text-shadow: 1px 1px #81413B;
+      }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+          border: 1px solid #EB796F;
+          border-radius: 5px;
+          padding: 10px;
+          width: 90%;
+       }
+
+        label {
+          padding-top: 10px !important;
+          display: block;
+        }
+
+        .boton {
+          border: 1px solid #EB796F;
+          background-color: #FAFAFA;
+          color: #EB796F;
+          padding: 10px;
+          font-size: 14px;
+          border-radius: 5px;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        .cuerpo-tarjeta {
+            padding: 20px
+
+        }
+   }
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="barra-superior"> <!-- Changed the text color of the barra-superior element to match the grayscale scheme -->
+      <h1>Lista de Pendientes</h1>
+    </div>
+    <div class="container">
+      {% block content %}
+
+      {% endblock content %}
+    </div>
+  </body>
+</html>
