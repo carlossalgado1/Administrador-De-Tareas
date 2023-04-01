@@ -17,10 +17,28 @@ class Logueo(LoginView):
 
     def get_success_url(self):
         return reverse_lazy("tareas")
+    from django import forms
+from django.contrib.auth.forms import UserCreationForm
+
+class CustomUserCreationForm(UserCreationForm):
+    usuario = forms.CharField(min_length=8)
+    password1 = forms.CharField(
+        label="Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        min_length=8,
+    )
+    password2 = forms.CharField(
+        label="Password confirmation",
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        strip=False,
+        min_length=8,
+    )
+
 
 class PaginaRegistro(FormView):
     template_name = "base/registro.html"
-    form_class = UserCreationForm
+    form_class = CustomUserCreationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy("tareas")
 
